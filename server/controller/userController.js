@@ -18,7 +18,7 @@ const SignupUser=async (req,res)=>{
 const getSignUpUserList=async(req,res)=>{
 try {
     const getSignUpUserList=await SignUserModel.find({});
-    res.status(200).json(signupUser);
+    res.status(200).json(getSignUpUserList);
 } catch (error) {
     res.status(404).send(error.message);
 }
