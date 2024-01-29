@@ -15,4 +15,13 @@ const SignupUser=async (req,res)=>{
 
 }
 
-module.exports={getUser,SignupUser}
+const getSignUpUserList=async(req,res)=>{
+try {
+    const getSignUpUserList=await SignUserModel.find({});
+    res.status(200).json(signupUser);
+} catch (error) {
+    res.status(404).send(error.message);
+}
+}
+
+module.exports={getUser,SignupUser,getSignUpUserList}
